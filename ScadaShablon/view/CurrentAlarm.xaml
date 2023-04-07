@@ -1,0 +1,84 @@
+﻿<Window x:Class="ScadaShablon.view.CurrentAlarm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	    xmlns:vm="clr-namespace:ScadaShablon.view_model"
+        xmlns:local="clr-namespace:ScadaShablon.view"
+        mc:Ignorable="d" 
+        Height="600" 
+        Width="1050" 
+        Opacity="1" 
+        Topmost="True" 
+        Title="AKTİV ALARMLAR" 
+        FontWeight="SemiBold" 
+        WindowStyle="ToolWindow" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+	<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+	    <GradientStop Color="#FF424951" Offset="0"/>
+	    <GradientStop Color="#FF929EAE" Offset="1"/>
+	</LinearGradientBrush>
+    </Window.Background>
+    <Window.DataContext>
+	<vm:ViewModel x:Name="hm"/>
+    </Window.DataContext>
+    <Grid AllowDrop="True" AutomationProperties.IsColumnHeader="True">
+	<DataGrid x:Name="tt" 
+              Background="{x:Null}"  
+              Width="1043" 
+              FontSize="14" 
+              HorizontalScrollBarVisibility="Disabled" 
+              VerticalScrollBarVisibility="Hidden" 
+              HeadersVisibility="None"     
+              HorizontalAlignment="Left" 
+              VerticalAlignment="top" 
+              ItemsSource="{Binding data.GetCurrentAlarmTab}" 
+              IsReadOnly="True" 
+              RowHeight="25" 
+              HorizontalGridLinesBrush="{x:Null}" 
+              GridLinesVisibility="Vertical" 
+              BorderBrush="{x:Null}" 
+              AlternationCount="2" >
+	    <DataGrid.Foreground>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+		    <GradientStop Color="#FF1B1B1B" Offset="0.265"/>
+		    <GradientStop Color="#FF5A5959" Offset="0.035"/>
+		    <GradientStop Color="#FF5A5959" Offset="0.952"/>
+		    <GradientStop Color="#FF232222" Offset="0.737"/>
+		</LinearGradientBrush>
+	    </DataGrid.Foreground>
+	    <DataGrid.VerticalGridLinesBrush>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+		    <GradientStop Color="White" Offset="0.358"/>
+		    <GradientStop Color="#FF151515" Offset="0.013"/>
+		    <GradientStop Color="#FF151515" Offset="0.98"/>
+		    <GradientStop Color="White" Offset="0.696"/>
+		</LinearGradientBrush>
+	    </DataGrid.VerticalGridLinesBrush>
+	    <DataGrid.RowBackground>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+		    <GradientStop Color="#FFAAAAAA"/>
+		    <GradientStop Color="#FFEAEAEA" Offset="0.488"/>
+		    <GradientStop Color="White" Offset="0.498"/>
+		    <GradientStop Color="#FFAAAAAA" Offset="1"/>
+		</LinearGradientBrush>
+	    </DataGrid.RowBackground>
+	    <DataGrid.AlternatingRowBackground>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+		    <GradientStop Color="#FFCD2121"/>
+		    <GradientStop Color="LightCoral" Offset="0.485"/>
+		    <GradientStop Color="#FFCD2121" Offset="1"/>
+
+		</LinearGradientBrush>
+	    </DataGrid.AlternatingRowBackground>
+	    <DataGrid.Columns>
+		<DataGridTextColumn Width="200" FontWeight="SemiBold" Header="name"  Binding="{Binding device_name}"/>
+		<DataGridTextColumn Width="450" Header="message"  Binding="{Binding message}"/>
+		<DataGridTextColumn Width="400" Header="tarix ve zaman" Foreground="Blue" Binding="{Binding date_and_time, ConverterCulture='az-AZ', StringFormat= dd MMMM yyyy  dddd  HH:mm:ss}" />
+	    </DataGrid.Columns>
+	</DataGrid>
+
+    </Grid>
+</Window>
+

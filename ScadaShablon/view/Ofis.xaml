@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ScadaShablon.view.Ofis"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScadaShablon.view"
+             mc:Ignorable="d" 
+                 d:DesignHeight="1080" d:DesignWidth="3840" RenderTransformOrigin="0.5,0.5">
+    <Grid>
+	<Grid.ColumnDefinitions>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	    <ColumnDefinition/>
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+	    <RowDefinition/>
+	    <RowDefinition/>
+	    <RowDefinition/>
+	    <RowDefinition/>
+	    <RowDefinition/>
+	    <RowDefinition/>
+	</Grid.RowDefinitions>
+	<Image Grid.Column="9" Grid.ColumnSpan="10" Grid.RowSpan="6" Source="/tek/shutterstock_1920.png" Height="1080" Width="1920" Canvas.Left="0" Margin="61.6,0,-36,0"  />
+
+	<Canvas x:Name="cmr" Grid.RowSpan="2" >
+	    <GroupItem ContentTemplate="{StaticResource office}" Content="{Binding office}" RenderTransformOrigin="0.5,0.5" Canvas.Left="160" Canvas.Top="0">
+		<GroupItem.RenderTransform>
+		    <TransformGroup>
+			<ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+			<SkewTransform/>
+			<RotateTransform/>
+			<TranslateTransform/>
+		    </TransformGroup>
+		</GroupItem.RenderTransform>
+
+	    </GroupItem>
+	</Canvas>
+    </Grid>
+</UserControl>
+

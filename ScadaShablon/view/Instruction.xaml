@@ -1,0 +1,126 @@
+﻿<Window x:Class="ScadaShablon.view.Instruction"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	     xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScadaShablon.view"
+             mc:Ignorable="d" 
+              Title="Instruction" Height="1200" Width="1600" ShowActivated="False" Topmost="False" MouseLeave="Window_LostFocus" WindowStartupLocation="CenterScreen"  WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+    <Window.Resources>
+	<ObjectDataProvider x:Key="date" ObjectType="{x:Type system:DateTime}"/>
+	<Style x:Name="ok" TargetType="TextBlock">
+	    <Style.Triggers>
+		<DataTrigger  Binding="{Binding ElementName=start, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Təqdim olunan Operator üçün təlimat texniki sənədi  Qaz anbarları  kompressor stansiyasında  yanğın və qaz təzahürünü aşkarlama sistemi üçün zəruri olan istifadəçi qaydalarını özündə əks etdirir. 
+                                                                                                                                                                                                                                        Qaz anbarları kompressor stansiyasında yanğın və qaz təzahürünü aşkarlama sisteminin proqram təminatı (sonralar proqram təminatı) -  6 ədəd kompressor ətrafında quraşdırılmış yanğın və qaz aşkar etmə cihazlarından, kompressor stansiyasında quraşdırılmış vurucu və sovurucu ventilyatorlardan və ərazi üzrə binalarda qurasdırılmış tüstü detektorları ve ventilyatorlardan daxil olan informasiyanı qəbul etmək, məlumatlar bazasına yazmaq, real zaman ərzində emal etmək və istifadəçi üçün lazım olan informasiyanı monitorda əks etdirmək və eyni zamanda aidiyyatı üzrə əmrlər göndərmək üçün nəzərdə tutulub."/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=prosses, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1 kompressor stansiyasında hər bir kompressor ətrafında iki ədəd yanğın xəbərvericisi və 2 ədəd qaz təzahürü xəbərvericisi quraşdırılmışdır. 
+                                                                                                                                                                                            Bundan əlavə 2 ədəd traslı qaz təzahürü xəbərvericisi və əl ilə idarə olunan ''yanğın'' xəbərvericiləri də kompressor stansiyasının yanğın və qaz təzahüründən mühafizəsi üçün nəzərdə tutulmuşdur.
+	                                                                                                                                      Zona 1 Kompressor stansiyasında quraşdırılmış hər hansı bir yanğın (BTF1.1-1.12) xəbərvericisindən və ya əl ilə idarə olunan ''yanğın'' xəbərvericisindən (BTM1.1-1.6) yanğın olması ilə bağlı siqnal gələrsə stansiya ərazisində çıxış qapıları yaxınlığında quraşdırılmış 'Yanğın' tabloları (BİAL 1.1-1.4) və səs xəbərvericiləri işə düşəcəkdir. 
+                                                                                                                                                                                      Eyni zamanda 'Emergency Shutdown' sismetimə siqnal ötürülməsi nəticəsində kompressorların avtomatik dayandırılması nəzərdə tutulmuşdur.                                     
+	                                                                                                                                                                                                Zona 1Q  Qaz  Təzahürünə  Nəzarət  Zonasında hər hansı bir kompressor ətrafında quraşdırılmış qaz təzahürü xəbərvericisindən siqnal gələrsə (qazın konsentrasiyası aşağı partlama həddinin 25%-nə çatdıqda) aidiyyatı üzrə həmin kompressorun söndürülməsi üçün Yanğın və Qaz Sistemindən  Avtomatik qəza əleyhinə müdafiə sisteminə 'qaz təzahürü' siqnalını göndəriləcək və ərazidə quraşdırılmış 'Qaz Təzahürü' tabloları işə düşəcəkdir. Bundan əlavə Zona 1Q Qaz  Təzahürünə Nəzarət  Zonasında qaz təzahürü olduqda (qazın konsentrasiyası aşağı partlama həddinin 5%-nə çatdıqda) QS sovurucu tipli ventilyatorların avtomatik (məsafədən) qəza işə salınması və eyni zamanda V1.1-1.4 vurucu ventilyatorların söndürülməsi nəzərdə tutulmuşdur.
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=detaktpass, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Mövcud sistemdə Zona 1 üzrə quraşdırılmış qaz və yanğın aşkaretmə cihazlarının zərurət yarandığı halda passiv rejimə keçirmə imkanı nəzərə alınmışdır.                                         
+                                                                                                                                         Bunun üçün ilk öncə siçan ilə ekranın solunda yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''detektorlara müdaxilə izni'' düyməsini siçanın sol düyməsi ilə basırıq. 
+                                                                                                                                         Bu zaman ekranda açılan şifrə pəncərəsində şifrəni daxil edərək ''OK'' düyməsi ilə təsdiqləmək lazımdır. 
+                                                                                                                                         Şifrə yanlış daxil edilərsə, ekrana şifrənin düzgün olmaması ilə bağlı xəbərdarlıq mesajı çıxacaqdır. 
+                                                                                                                                         Şifrənin təsdiqləndikdən sonra müəyyən edilmiş müddət ərzində detektorlara müdaxiləni aktiv edir.
+                                                                                                                                          Zona 1 detektorların passiv (aktiv) edilməsi 3 formada mümkündür:                                                                                                            
+                                                                                                                                                      1.	Yanğın və ya Qaz detektorlarından hər-hansı birini deaktiv (aktiv) etmək üçün passiv (aktiv) ediləcək detektorun üzərində siçanın sol düyməsini basırıq və açılan pəncərədən lazım olan düyməni basmaqla əmri icra edirik.
+                                                                                                                                                                                       2.	Kompressorlar üzrə kompressora nəzarət edən detektorların deaktiv (aktiv) edilməsi üçün aidiyyatı üzrə kompressorun üzərində siçanın sol düyməsini basırıq və açılan pəncərədən lazım olan düyməni basmaqla əmri icra edirik.
+                                                                                                                                                                                      3.	Əgər Zona 1 detektorlarının bütövlükdə passiv (aktiv) rejimə keçirmək tələb olunarsa, siçan ilə ekranın solunda yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''Zona 1 detektorları'' düyməsinin üzərinə gəlirik və açılan menyudan lazım olan düyməni basmaqla əmri icra edirik.
+                                                                                                                                          Detektorların deaktiv edilməsi, passiv edilmiş detektorun yanında bu barədə məlumat verici, sarı rəngli textin yanıb sönməsi ilə müşayət edilir.
+                                                                                                                                                                                                  Eyni zamanda ekranın yuxarı tərəfində yerləşən ''COMPRESSOR STANSİYASI'' düyməsində olan indigator və start ekranda yerləşən ''ZONA 1'' düyməsində olan indigatorun göy rəngdə olması ilə müəyyənləşir.
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=fanidol, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1 kompressor stansiyasında quraşdırılmış sovurucu ventilyatorların 2 rejimdə -avtomatik və məsafədən idarəolunma-işləməsi nəzərə tutulmuşdur. 
+                                                                                                                                                                           QS tipli sovurucu ventilyatorları fərdi formada məsafədən idarə olunma rejiminə keçirtmək üçün müdaxilə edilməsi istənilən ventilyatorun uzərində siçanın sol düyməsini basıb, açılan pəncərədən ''manual'' düyməsini basmaq lazımdır.
+                                                                                                                                                                           Bundan sonra ''start'' və ya ''stop'' düymələrini basmaqla lazımı komandaları icra etmək mümkündür. 
+                                                                                                                               Ventilyatoru avtomatik idarə olunma rejimə keçirmək üçün, həmin ventilyatorun uzərində siçanın sol düyməsini basıb, açılan pəncərədən ''auto'' düyməsini basmaq lazımdır.
+                                                                                                                               QS tipli sovurucu ventilyatorları ümumi formada məsafədən idarə olunma rejiminə keçirtmək üçün ekranın sol tərəfində yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''Zona 1 Sovurucu Ventilyatorlar'' düyməsini basaraq (bu zaman duymənin üzərində olan yaşıl rəngli AUTO labeli, qırmızı rəngli MANUAL labeli ilə əvəz olunur) və açılan menyudan ''start'' və ya ''stop'' düymələrini basmaqla lazımı komandaları icra etmək mümkündür.
+                                                                                                                               QS tipli sovurucu ventilyatorları ümumi formada avtomatik idarə olunma rejiminə keçirtmək üçün ekranın sol tərəfində yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''Zona 1 Sovurucu Ventilyatorlar'' düyməsini basırıq (bu zaman duymənin üzərində olan qırmızı rəngli MANUAL labeli, yaşıl rəngli AUTO labeli ilə əvəz olunr).
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=ventidol, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1 kompressor stansiyasında quraşdırılmış vurucu ventilyatorların 2 rejimdə -avtomatik və məsafədən idarəolunma-işləməsi nəzərə tutulmuşdur. 
+                                                                                                                                                                               V tipli vurucu ventilyatorları fərdi formada məsafədən idarə etmək üçün müdaxilə edilməsi istənilən ventilyatorun uzərində siçanın sol düyməsini basıb, açılan pəncərədən ''start'' və ya ''stop'' düymələrini basmaqla lazımı komandaları icra etmək mümkündür. 
+                                                                                                                                                            
+                                                     V tipli vurucu ventilyatorları ümumi formada məsafədən idarə olunma rejiminə keçirtmək üçün ekranın sol tərəfində yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''Zona 1 Vurucu Ventilyatorlar'' düyməsinin üzərinə gəlinən zaman açılan menyudan ''start'' və ya ''stop'' düymələrini basmaqla lazımı komandaları icra etmək mümkündür.
+                                                                                                                                                                                                                                     QS tipli sovurucu ventilyatorları ümumi formada avtomatik idarə olunma rejiminə keçirtmək üçün ekranın sol tərəfində yerləşən ''idarəetmə'' yazısının üzərinə gələrək özü açılıb bağlanan paneldən ''Zona 1 Sovurucu Ventilyatorlar'' düyməsini basırıq (bu zaman duymənin üzərində olan qırmızı rəngli MANUAL labeli, yaşıl rəngli AUTO labeli ilə əvəz olunr).
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=yansif, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1 Kompressor stansiyasında Yanğın və ya Qaz Sızması Həyəcanına səbəb olan mühüt aradan qalxdıqdan sonra sistemin normal vəziyyətə qaytarmaq üçün ekranın yuxarı hissəsində yerləşən ''YANĞINI SIFIRLA'' düyməsini basmaq lazımdır."/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=ventsif, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1 Kompressor stansiyasında Yanğın və ya Qaz Sızması Həyəcanına səbəb olan mühüt aradan qalxdıqdan sonra ventilyatorların normal işləmə rejiminə qaytarmaq üçün ekranın yuxarı hissəsində yerləşən ''VENTİLYATORLARI SIFIRLA'' düyməsini basmaq lazımdır."/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=nav, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="İdarə etmə sisteminin nəzarət etdiyi Zonalar üzrə qrafik pəncərələrin açılması və ya zonalarda hər hansı bir həyəcan signalının olub olmamasına nəzarət etmək üçün siçanın sol düyməsi ilə ekranın yuxarısında yerləşən ''ƏSAS EKRAN'' düyməsinə basmaq lazımdır. 
+                                                                                                                                                                           Açılan pəncərədə hər bir zonaya aid düymələr yerləşdirilmişdir. İstənilən düymə basmaqla aidiyyəti zonaya aid qrafik dəyərlərin saxlandığı pəncərəyə keçid etmək olar və ya düymənin üzərində yerləşən vəziyyət göstəricisinin (indigator) statusuna görə həmin zonanın hazırkı vəziyyəti izlənə bilər.
+                                                                                                                                             Obyektlər üzrə nəzarətin həyata keçirilməsi üçün ekranın yuxarı hissəsində yerləşən düymələrdən istifadə etmək lazımdır. Hər hansı bir obyektə aid qrafik statusları izləmək üçün siçanın sol düyməsi ilə aidiyyəti obyektin adı yazılan düyməni basmaq lazımdır.
+                                                                                                                                                                                                      Həmçinin düymələrin üzərində yerləşən vəziyyət göstəricisi (indigator) ilə aid oldugu obyektin hazırkı statusu izlənə bilər.
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=alarmxro, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Zona 1, Zona 2, Zona 3, Zona 4, Zona 5, Zona 6, Zona 7, Zona 8, Zona 9, Zona 10, Zona 11 və Zona 12-də baş vermiş istənilən Yanğın, Qaz Sızması və Tüstülənmə ilə bağlı həyəcan signalları və baş vermə tarix və zamanı, habelə yuxarıda göstərilən ərazilərdə yerləşən detektorlarda əmələ gələn xətalar və baş vermə tarix və zamanını izləmək mümkündür.
+                                                                                                                                            Bunun üçün ekranın yuxarısında olan ''ALARMLAR'' düyməsinə basmaqla açılan pəncərədə yerləşən ''Başlanğıc Tarixi'' və ''Son Tarix'' bölmələrində yerləşən təqvimdən itədiyimiz zaman aralığının bir gün əvvəlini və bir gün sonrasını seçmək lazımdır.
+"/>
+		</DataTrigger>
+		<DataTrigger  Binding="{Binding ElementName=operxro, Path=IsFocused}" Value="true">
+		    <Setter Property="Text" Value="Operator tərəfindən idarə etmə ekranı üzərindən icra edilmiş əmrlər, habelə əmirlərin icra edimə tarix və zamanını izləmək üçün ekranın yuxarısında yerləşən ''HADİSƏLƏR'' düyməsinə basmaqla açılan pəncərədə olan ''Başlanğıc Tarixi'' və ''Son Tarix'' bölmələrində yerləşən təqvimdən itədiyimiz zaman aralığının bir gün əvvəlini və bir gün sonrasını seçmək lazımdır."/>
+		</DataTrigger>
+		<!--<DataTrigger Binding="{Binding ElementName=star2t, Path=IsFocused}" Value="true">
+                    <Setter Property="Text" Value="{Binding Source={x:Static system}"
+                </DataTrigger>-->
+	    </Style.Triggers>
+	</Style>
+    </Window.Resources>
+    <Grid Background="{x:Null}" >
+	<Grid.ColumnDefinitions>
+	    <ColumnDefinition Width="400"/>
+	    <ColumnDefinition/>
+	</Grid.ColumnDefinitions>
+	<StackPanel x:Name="k" Grid.Column="0" Background="#FFD64F4F">
+
+	    <Button x:Name="start" Style="{StaticResource st24}" Height="30" Width="{Binding}" Margin="0 30 0 0">GİRİŞ</Button>
+	    <Button x:Name="prosses" Style="{StaticResource st24}" Height="30" Width="{Binding}">PROSSESİN İDARƏ OLUNMASI</Button>
+	    <Button x:Name="detaktpass" Style="{StaticResource st24}" Height="30" Width="{Binding}">ZONA1 VƏ YA DETECTORLARIN PASSİV EDİLMƏSİ</Button>
+	    <Button x:Name="fanidol" Style="{StaticResource st24}" Height="30" Width="{Binding}">SOVURUCU VENTİLYATORLARIN İDARƏ OLUNMASI</Button>
+	    <Button x:Name="ventidol" Style="{StaticResource st24}" Height="30" Width="{Binding}">VURUCU VENTİLYATORLARIN İDARƏ OLUNMASI</Button>
+	    <Button x:Name="yansif" Style="{StaticResource st24}" Height="30" Width="{Binding}">YANĞIN VƏ QAZ SIZMASI SİQNALININ SIFIRLANMASI</Button>
+	    <Button x:Name="ventsif" Style="{StaticResource st24}" Height="30" Width="{Binding}">VENTİLYATORLARIN NORMAL REJİMƏ KEÇİRİLMƏSİ</Button>
+	    <Button x:Name="nav" Style="{StaticResource st24}" Height="30" Width="{Binding}">ZONALAR VƏ OBYEKTLƏR ÜZRƏ NAVİGASİYA</Button>
+	    <Button x:Name="alarmxro" Style="{StaticResource st24}" Height="30" Width="{Binding}">BAŞ VERMİŞ HADİSƏLƏRİN XRONOLOGİYASI</Button>
+	    <Button x:Name="operxro" Style="{StaticResource st24}" Height="30" Width="{Binding}">OPERATOR MÜDAXİLƏLƏRİNİN XRONOLOGİYASI</Button>
+
+	    <Button x:Name="star2t" Style="{StaticResource st24}" Height="30" Width="{Binding}" Click="Star2t_Click" >PDF</Button>
+	    <!-- <Button x:Name="star3t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star4t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star5t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star6t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star7t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star8t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star9t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star11t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star12t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star13t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star14t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star15t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star16t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star17t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>
+            <Button x:Name="star18t" Style="{StaticResource st24}" Height="30" Width="{Binding}"></Button>-->
+	</StackPanel>
+	<Canvas Grid.ColumnSpan="2" Background="White" Opacity="0.9" Panel.ZIndex="-1"/>
+	<ScrollViewer Grid.Column="1">
+	    <TextBlock x:Name="dd" Grid.Column="1" Padding="50 50" FontSize="25" TextTrimming="WordEllipsis" TextWrapping="WrapWithOverflow" FontStretch="ExtraExpanded" FontFamily="Calibri" Background="{x:Null}"/>
+	</ScrollViewer>
+
+    </Grid>
+    </Window>
+
